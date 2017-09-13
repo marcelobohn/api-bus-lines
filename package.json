@@ -1,0 +1,25 @@
+{
+  "name": "api-bus-lines",
+  "version": "1.0.0",
+  "description": "find a bus line",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelobohn/api-bus-lines.git"
+  },
+  "keywords": [
+    "js",
+    "node",
+    "bus",
+    "line"
+  ],
+  "author": "@marcelobohn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcelobohn/api-bus-lines/issues"
+  },
+  "homepage": "https://github.com/marcelobohn/api-bus-lines#readme"
+}
