@@ -1,0 +1,24 @@
+{
+	"linesCount": "1",
+	"lines": [{
+		"id": "1",
+		"originalData": {
+			"description": "07:10-IV-FDL-NH",
+			"group": "IV-NH-SL - SEGUNDA À SEXTA-FEIRA"
+		},
+		"type": "intercity",
+		"departure": {
+			"city": "Ivoti",
+			"hour": "07:10"
+		},
+		"arraival": {
+			"city": "Novo Hamburgo"
+		},
+		"busStops": [{
+			"key": "start",
+			"posX": "123",
+			"posY": "147"
+		}],
+		"obs": "Via federal"
+	}]
+}
