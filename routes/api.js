@@ -1,15 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-const lines = require('../data/lines');
-const routes = require('../data/routes');
+const lines = require('./lines');
+const routes = require('./routes');
 
-router.post('/lines', function(req, res, next) {
-  res.json(lines);  
-});
-
-router.post('/routes', function(req, res, next) {
-  res.json(routes);  
-});
+router.use('/lines', lines);
+router.use('/routes', routes);
 
 module.exports = router;
