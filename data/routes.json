@@ -1,0 +1,18 @@
+{
+	"routes": [{
+		"resume": "IV-FDL-NH",
+		"type": "intercity",
+		"departure": {
+			"city": "Ivoti"
+		},
+		"arraival": {
+			"city": "Novo Hamburgo"
+		},
+		"busStops": [{
+			"key": "start",
+			"posX": "123",
+			"posY": "147"
+		}],
+		"obs": "Via federal"
+	}]
+}
