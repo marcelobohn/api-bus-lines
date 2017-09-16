@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-const lines = require('./lines');
-const routes = require('./routes');
+const lines = require('./api/lines');
+const routes = require('./api/routes');
 
 router.use('/lines', lines);
 router.use('/routes', routes);

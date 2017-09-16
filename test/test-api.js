@@ -25,27 +25,6 @@ describe("route", function() {
 
           done();
         });
-    });    
-
-    it('POST api routes', (done) => {
-      chai.request(server)
-        .post('/api/routes')
-        .end((err, res) => {
-          expect(res.status).to.equal(200);
-          expect(res.body).to.be.an('object');
-          expect(res).to.be.json;
-          expect(res.body).to.include.keys(['routes']);
-          expect(res.body.routes).to.have.lengthOf(1);          
-          var firstRoute = res.body.routes[0];
-          expect(firstRoute).to.include.keys(['resume','type','departure','arraival','obs']);
-          expect(firstRoute.resume).to.equal('IV-FDL-NH');
-          expect(firstRoute.type).to.equal('intercity');
-          expect(firstRoute.departure).to.deep.include({"city": "Ivoti"});
-          expect(firstRoute.arraival).to.deep.include({"city": "Novo Hamburgo"});
-          expect(firstRoute.obs).to.equal('Via federal');
-
-          done();
-        });
-    });        
+    });          
   });
 });
