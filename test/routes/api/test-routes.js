@@ -16,7 +16,7 @@ describe("route from bus routes", function() {
           expect(res.body).to.be.an('object');
           expect(res).to.be.json;
           expect(res.body).to.include.keys(['items']);
-          expect(res.body.items).to.have.lengthOf(1);          
+          expect(res.body.items).to.have.lengthOf(3);          
           done();
         });
     });        

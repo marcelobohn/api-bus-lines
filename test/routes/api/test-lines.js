@@ -16,13 +16,13 @@ describe("route", function() {
           expect(res.body).to.be.an('object');
           expect(res).to.be.json;
           expect(res.body).to.include.keys(['items']);
-          expect(res.body.items).to.have.lengthOf(1);
+          expect(res.body.items).to.have.lengthOf(3);
           done();
         });
     });
     it('POST api find a line', (done) => {
       chai.request(server)
-        .post('/api/lines/1')
+        .post('/api/lines/3')
         .end((err, res) => {
           expect(res.status).to.equal(200);
           expect(res.body).to.be.an('object');
