@@ -1,14 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
-const lines = require('../../data/lines');
-
-router.post('/', function(req, res, next) {
+router.post('/:enterprise', function(req, res, next) {
+  const { enterprise } = req.params;
+  const lines = require(`../../data/${enterprise}/lines`);
   res.json(lines);  
 });
 
-router.post('/:id', function (req, res) {
-  const { id } = req.params;
+router.post('/:enterprise/:id', function (req, res) {
+  const { enterprise, id } = req.params;
+  const lines = require(`../../data/${enterprise}/lines`);
   const r = lines.items.find(a => a.id === id);
   if (r)
     res.json(r);

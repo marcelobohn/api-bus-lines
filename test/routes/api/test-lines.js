@@ -10,7 +10,7 @@ describe("route", function() {
   describe('api/lines', () => {
     it('POST api lines', (done) => {
       chai.request(server)
-        .post('/api/lines')
+        .post('/api/lines/socaltur')
         .end((err, res) => {
           expect(res.status).to.equal(200);
           expect(res.body).to.be.an('object');
@@ -22,7 +22,7 @@ describe("route", function() {
     });
     it('POST api find a line', (done) => {
       chai.request(server)
-        .post('/api/lines/3')
+        .post('/api/lines/socaltur/3')
         .end((err, res) => {
           expect(res.status).to.equal(200);
           expect(res.body).to.be.an('object');
