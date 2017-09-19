@@ -1,14 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
-const routes = require('../../data/routes');
-
-router.post('/', function(req, res, next) {
+router.post('/:enterprise/', function(req, res, next) {
+  const { enterprise } = req.params;
+  const routes = require(`../../data/${enterprise}/routes`);
   res.json(routes);  
 });
 
-router.post('/:resume', function (req, res) {
-  const { resume } = req.params;
+router.post('/:enterprise/:resume', function (req, res) {
+  const { enterprise, resume } = req.params;
+  const routes = require(`../../data/${enterprise}/routes`);
   const r = routes.items.find(a => a.resume === resume);
   if (r)
     res.json(r);

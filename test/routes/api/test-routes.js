@@ -10,7 +10,7 @@ describe("route from bus routes", function() {
   describe('api/routes', () => {   
     it('POST api all routes', (done) => {
       chai.request(server)
-        .post('/api/routes')
+        .post('/api/routes/socaltur')
         .end((err, res) => {
           expect(res.status).to.equal(200);
           expect(res.body).to.be.an('object');
@@ -23,7 +23,7 @@ describe("route from bus routes", function() {
 
     it('POST api find a route', (done) => {
       chai.request(server)
-        .post('/api/routes/IV-FDL-NH')
+        .post('/api/routes/socaltur/IV-FDL-NH')
         .end((err, res) => {
           expect(res.status).to.equal(200);
           expect(res.body).to.be.an('object');
@@ -40,7 +40,7 @@ describe("route from bus routes", function() {
 
     it('POST api route undefined', (done) => {
       chai.request(server)
-        .post('/api/routes/ERROR_ROUTE')
+        .post('/api/routes/socaltur/ERROR_ROUTE')
         .end((err, res) => {
           expect(res.status).to.equal(404);
           expect(res.body).to.be.an('object');
