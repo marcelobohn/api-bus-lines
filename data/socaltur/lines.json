@@ -26,5 +26,14 @@
 		"departureHour": "07:10",
 		"obs": "",
 		"route": "IV-FDL-NH"
+	},{
+		"id": "4",
+		"originalData": {
+			"description": "05:10-IV-EV-NH-SL",
+			"group": "IV-NH-SL - SEGUNDA À SEXTA-FEIRA"
+		},
+		"departureHour": "05:10",
+		"obs": "",
+		"route": "IV-EV-NH-SL"		
 	}]
 }

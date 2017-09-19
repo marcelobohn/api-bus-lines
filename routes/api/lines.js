@@ -2,8 +2,11 @@ var express = require('express');
 var router = express.Router();
 
 router.post('/:enterprise', function(req, res, next) {
-  const { enterprise } = req.params;
-  const lines = require(`../../data/${enterprise}/lines`);
+  const { enterprise, route } = req.params;
+  const { filterRoute } = req.body;
+  let lines = require(`../../data/${enterprise}/lines`);
+  if (filterRoute)
+    lines.items = lines.items.filter((l) => l.route === filterRoute);
   res.json(lines);  
 });
 
