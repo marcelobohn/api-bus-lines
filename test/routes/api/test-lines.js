@@ -35,10 +35,10 @@ describe("route", function() {
           expect(line).to.include.keys(['originalData','route','departureHour','obs']);
           expect(line.originalData).to.deep.include({"description": "05:10-IV-EV-NH-SL","group": "IV-NH-SL - SEGUNDA À SEXTA-FEIRA"});
           expect(line.route).to.equal('IV-EV-NH-SL');
-          expect(line.departureHour).to.deep.include('05:10');          
+          expect(line.departureHour).to.deep.include('05:10');
           done();
         });
-    });    
+    });
     it('POST api find a line by id', (done) => {
       chai.request(server)
         .post('/api/lines/socaltur/3')
