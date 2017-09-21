@@ -6,7 +6,9 @@
   "scripts": {
     "test": "mocha",
     "start": "node ./bin/www",
-    "coverage": "SET NODE_ENV=test && istanbul cover --report text --report html node_modules/mocha/bin/_mocha -- -R spec --reporter dot"    
+    "dev": "SET NODE_ENV=development && node ./bin/www",
+    "dev-mac": "export NODE_ENV=development && node ./bin/www",
+    "cover": "istanbul cover --report text --report html node_modules/mocha/bin/_mocha -- -R spec --reporter dot"
   },
   "repository": {
     "type": "git",
