@@ -4,7 +4,7 @@ let expect = require("chai").expect;
 const routes = require('../../models/routes');
 
 describe("model", function() {
-  describe.only('routes', () => {
+  describe('routes', () => {
     it('validate enterprise', (done) => {
       const r = routes.get('socaltur').value();
       expect(r).to.include.keys(['items']);
