@@ -44,5 +44,17 @@ describe("route", function() {
           done();
         });
     });
+    it('POST api undefined', (done) => {
+      chai.request(server)
+        .post('/api/lines/socaltur/ERROR_ROUTE')
+        .end((err, res) => {
+          expect(res.status).to.equal(404);
+          expect(res.body).to.be.an('object');
+          expect(res).to.be.json;
+          expect(res.body).to.include.keys(['error']);
+          expect(res.body.error).to.equal('Not found line');
+          done();
+        });
+    });
   });
 });

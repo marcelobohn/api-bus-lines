@@ -4,9 +4,9 @@
   "description": "find a bus line",
   "private": true,
   "scripts": {
-    "test": "mocha",
+    "test": "SET NODE_ENV=test && mocha",
     "start": "node ./bin/www",
-    "coverage": "istanbul cover --report text --report html node_modules/mocha/bin/_mocha -- -R spec --reporter dot"    
+    "coverage": "SET NODE_ENV=test && istanbul cover --report text --report html node_modules/mocha/bin/_mocha -- -R spec --reporter dot"    
   },
   "repository": {
     "type": "git",

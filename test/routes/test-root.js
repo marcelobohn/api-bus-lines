@@ -22,5 +22,14 @@ describe("route", function() {
           done();
         });
     });      
+    it('GET path not found', (done) => {
+      chai.request(server)
+        .get('/notfound')
+        .end((err, res) => {
+          expect(res.status).to.equal(404);
+          expect(res).to.be.html;
+          done();          
+        });
+    });
   });
 });
