@@ -4,7 +4,7 @@
   "description": "find a bus line",
   "private": true,
   "scripts": {
-    "test": "SET NODE_ENV=test && mocha",
+    "test": "mocha",
     "start": "node ./bin/www",
     "coverage": "SET NODE_ENV=test && istanbul cover --report text --report html node_modules/mocha/bin/_mocha -- -R spec --reporter dot"    
   },
