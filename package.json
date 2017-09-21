@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "mocha",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "coverage": "istanbul cover --report text --report html node_modules/mocha/bin/_mocha -- -R spec --reporter dot"    
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^3.0.0",
+    "istanbul": "^0.4.5",
     "mocha": "^3.5.3",
     "request": "^2.82.0"
   }
