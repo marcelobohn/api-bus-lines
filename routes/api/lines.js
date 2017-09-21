@@ -2,23 +2,20 @@ var express = require('express');
 var router = express.Router();
 var decache = require('decache');
 
+const lines = require('../../models/lines');
+
 router.post('/:enterprise', function(req, res, next) {
   const { enterprise, route } = req.params;
   const { filterRoute } = req.body;
-  decache(`../../data/lines`);
-  let lines = require(`../../data/lines`);
-  lines = lines[enterprise];
+  let r = lines.read().get(enterprise).value();
   if (filterRoute)
-    lines.items = lines.items.filter((l) => l.route === filterRoute);
-  res.json(lines);
+    r.items = r.items.filter((l) => l.route === filterRoute);
+  res.json(r);
 });
 
 router.post('/:enterprise/:id', function (req, res) {
   const { enterprise, id } = req.params;
-  decache(`../../data/lines`);
-  let lines = require(`../../data/lines`);
-  lines = lines[enterprise];
-  const r = lines.items.find(a => a.id === id);
+  const r = lines.read().get(enterprise).get('items').value().find(a => a.id === id);
   if (r)
     res.json(r);
   else
