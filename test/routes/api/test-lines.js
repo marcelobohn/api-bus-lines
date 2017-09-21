@@ -1,11 +1,3 @@
-let chai = require('chai');
-let chaiHttp = require('chai-http');
-let expect = require("chai").expect;
-
-let server = require('../../../bin/www');
-
-chai.use(chaiHttp);
-
 describe("route", function() {
   describe('api/lines', () => {
     it('POST api lines', (done) => {
@@ -30,7 +22,6 @@ describe("route", function() {
           expect(res).to.be.json;
           expect(res.body).to.include.keys(['items']);
           expect(res.body.items).to.have.lengthOf(1);
-
           const line = res.body.items[0];
           expect(line).to.include.keys(['originalData','route','departureHour','obs']);
           expect(line.originalData).to.deep.include({"description": "05:10-IV-EV-NH-SL","group": "IV-NH-SL - SEGUNDA À SEXTA-FEIRA"});

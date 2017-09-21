@@ -1,11 +1,3 @@
-let chai = require('chai');
-let chaiHttp = require('chai-http');
-let expect = require("chai").expect;
-
-let server = require('../../../bin/www');
-
-chai.use(chaiHttp);
-
 describe("route from bus routes", function() {
   describe('api/routes', () => {   
     it('POST api all routes', (done) => {
@@ -20,7 +12,6 @@ describe("route from bus routes", function() {
           done();
         });
     });        
-
     it('POST api find a route', (done) => {
       chai.request(server)
         .post('/api/routes/socaltur/IV-FDL-NH')
@@ -37,7 +28,6 @@ describe("route from bus routes", function() {
           done();
         });
     });        
-
     it('POST api route undefined', (done) => {
       chai.request(server)
         .post('/api/routes/socaltur/ERROR_ROUTE')
