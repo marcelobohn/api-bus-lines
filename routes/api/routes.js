@@ -5,7 +5,10 @@ const routes = require('../../models/routes');
 
 router.post('/:enterprise', function(req, res, next) {
   const { enterprise } = req.params;
+  const { filterDepartureCity } = req.body;
   let r = routes.read().get(enterprise).value();  
+  if (filterDepartureCity)
+    r.items = r.items.filter((l) => l.departure.city === filterDepartureCity);  
   res.json(r);  
 });
 
