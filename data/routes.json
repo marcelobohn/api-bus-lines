@@ -45,6 +45,21 @@
 				"posY": "147"
 			}],
 			"obs": "Via federal"
+		},{
+			"resume": "NH-FDL-IV",
+			"type": "intercity",
+			"departure": {
+				"city": "Novo Hamburgo"
+			},
+			"arraival": {
+				"city": "Ivoti"
+			},
+			"busStops": [{
+				"key": "start",
+				"posX": "123",
+				"posY": "147"
+			}],
+			"obs": "Via federal"
 		}]
 	}
 }
