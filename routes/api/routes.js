@@ -1,16 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-router.post('/:enterprise/', function(req, res, next) {
+const routes = require('../../models/routes');
+
+router.post('/:enterprise', function(req, res, next) {
   const { enterprise } = req.params;
-  const routes = require(`../../data/${enterprise}/routes`);
-  res.json(routes);  
+  let r = routes.read().get(enterprise).value();  
+  res.json(r);  
 });
 
 router.post('/:enterprise/:resume', function (req, res) {
   const { enterprise, resume } = req.params;
-  const routes = require(`../../data/${enterprise}/routes`);
-  const r = routes.items.find(a => a.resume === resume);
+  const r = routes.read().get(enterprise).get('items').value().find(a => a.resume === resume);
   if (r)
     res.json(r);
   else
