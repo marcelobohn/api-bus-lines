@@ -8,7 +8,7 @@ describe("route", function() {
           expect(res.body).to.be.an('object');
           expect(res).to.be.json;
           expect(res.body).to.include.keys(['items']);
-          expect(res.body.items).to.have.lengthOf(4);
+          expect(res.body.items).to.have.lengthOf(5);
           done();
         });
     });
