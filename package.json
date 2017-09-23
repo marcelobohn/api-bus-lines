@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/marcelobohn/api-bus-lines#readme",
   "dependencies": {
-    "body-parser": "~1.18.1",
+    "body-parser": "^1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~3.0.1",
     "decache": "^4.1.0",
